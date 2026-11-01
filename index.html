@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Typo Town – Learn Typing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="bgl" id="bgl"></div>
+  <button class="chip theme" id="themeBtn" aria-label="Toggle theme">🌗</button>
+  <input id="kin" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"
+    aria-label="Typing input">
+
+  <div class="wrap">
+    <!-- HOME -->
+    <section class="screen on" id="home">
+      <div class="mascot">🐥</div>
+      <h1 id="title"></h1>
+      <p class="sub">Hi, I’m Pip! Let’s learn to type together, one letter at a time.</p>
+      <div class="lab" style="text-align:center">Pick your level</div>
+      <div class="chips" id="diffChips">
+        <button class="chip" data-d="easy">🌱 Easy</button>
+        <button class="chip sel" data-d="medium">🌼 Medium</button>
+        <button class="chip" data-d="hard">🔥 Hard</button>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="ico">🫧</div>
+          <h2>Bubbles</h2>
+          <p>Letters float up in bubbles. Type the letter to pop it before it reaches the top! Wrong keys cost points.
+          </p>
+          <div class="hint" id="bubInfo"></div><br>
+          <button class="btn" data-start="bubbles">▶ Start</button>
+        </div>
+        <div class="card">
+          <div class="ico">🧲</div>
+          <h2>KeyMagnet</h2>
+          <p>A target key lights up. Find it on the keyboard and press it fast. Practise your finger placement!</p>
+          <div class="lab">Key set</div>
+          <div class="chips" id="setChips">
+            <button class="chip sel" data-s="home">Home row</button>
+            <button class="chip" data-s="top">Top row</button>
+            <button class="chip" data-s="bottom">Bottom row</button>
+            <button class="chip" data-s="all">All letters</button>
+          </div>
+          <div class="hint" id="magInfo"></div><br>
+          <button class="btn s" data-start="magnet">▶ Start</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAME -->
+    <section class="screen" id="game">
+      <div class="hud" id="hud"></div>
+      <div class="msg" id="msg">Get ready…</div>
+      <div id="bubView">
+        <div class="arena" id="arena"></div>
+      </div>
+      <div id="magView" style="display:none">
+        <div class="target" id="tgt">?</div>
+        <div class="tbar" id="tbarWrap"><i id="tbar"></i></div>
+        <div class="kb" id="kb"></div>
+        <div class="legend"><span><i class="f1"></i>Pinky</span><span><i class="f2"></i>Ring</span><span><i
+              class="f3"></i>Middle</span><span><i class="f4"></i>Index</span></div>
+      </div>
+      <div class="ctrl">
+        <button class="btn s" id="restartBtn">🔁 Restart</button>
+        <button class="btn c" id="resetBtn">🏠 Reset</button>
+      </div>
+      <div class="hint">On a phone? <a href="#" id="kbTap" style="color:var(--grape);font-weight:700">Tap here</a> to
+        open your keyboard.</div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="screen" id="results">
+      <div class="mascot" id="rEmoji">🎉</div>
+      <h1 id="rTitle" style="font-size:2.2rem">Great job!</h1>
+      <div class="big" id="rScore">0</div>
+      <p class="sub" id="rNote"></p>
+      <div class="stats" id="rStats"></div>
+      <div class="ctrl">
+        <button class="btn" id="againBtn">▶ Play again</button>
+        <button class="btn g" id="homeBtn">🏠 Home</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+
+</html>
